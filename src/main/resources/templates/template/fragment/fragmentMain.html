@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>부분 포함</h1>
+<h2>부분 포함 insert</h2> <!--/* 현재 태그인 <div>태그를 유지한 상태로 이 다음에 footer.html의 <footer> 가져옴 */-->
+<div th:insert="~{template/fragment/footer :: copy}"></div> <!--/* copy : footer.html에서 th:fragment로 'copy'라고 설정한 부분 가져오기 */-->
+
+<h2>부분 포함 replace</h2> <!--/* 현재 태그인 <div>태그를 footer.html의 <footer>로 대체 */-->
+<div th:replace="~{template/fragment/footer :: copy}"></div>
+
+<h2>부분 포함 단순 표현식</h2>
+<div th:replace="template/fragment/footer :: copy"></div>
+
+<h1>파라미터 사용</h1>
+<div th:replace="~{template/fragment/footer :: copyParam ('데이터1', '데이터2')}"></div> <!--/* footer.html의 copyParam의 param1, param2에 파라미터를 보내줌 */-->
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--/* ::title -> 현재 페이지의 title 태그들을 전달, ::link -> 현재 페이지의 link 태그들을 전달 */-->
+<head th:replace="template/layout/base :: common_header(~{::title},~{::link})"> <!--/* 기본적으로 공통은 렌더링이 되고, 여기서 넣어준 title로 바껴 들어감 */-->
+    <title>메인 타이틀</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/themes/smoothness/jquery-ui.css}">
+</head>
+<body>
+메인 컨텐츠
+</body>
+</html>
