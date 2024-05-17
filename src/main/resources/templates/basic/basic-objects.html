@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>식 기본 객체 (Expression Basic Objects)</h1>
+<ul>
+    <li>request = <span th:text="${request}"></span></li>
+    <li>response = <span th:text="${response}"></span></li>
+    <li>session = <span th:text="${session}"></span></li>
+    <li>servletContext = <span th:text="${servletContext}"></span></li>
+    <li>locale = <span th:text="${#locale}"></span></li>
+</ul>
+
+<h1>편의 객체</h1>
+<ul>
+    <!-- 요청 파라미터 쉽게 가져오는 방법으로 타임리프에서 param이라는 이름으로 지원해줘서 param.쿼리 파라미터명을 하면 쿼리 파라미터 값을 가져와줌.(session도) -->
+    <li>Request Parameter = <span th:text="${param.paramData}"></span></li>
+    <li>session = <span th:text="${session.sessionData}"></span></li>
+    <li>spring bean = <span th:text="${@helloBean.hello('Spring!')}"></span></li> <!-- ${@스프링 빈 클래스 이름} 스프링 빈에 직접 접근해서 객체 생성하여 값 받기 -->
+</ul>
+
+</body>
+</html>
